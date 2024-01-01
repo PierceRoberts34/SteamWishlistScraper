@@ -23,7 +23,7 @@ def main():
     for column in csv_columns:
         SteamCSV.write(f"{column},")
     SteamCSV.write("\n")
-
+    print("Scraping wishlist, please wait...")
     for appID in regex:
         print(appID)
         game = SteamApp(appID, Country)
