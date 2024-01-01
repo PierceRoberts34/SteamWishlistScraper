@@ -11,7 +11,7 @@ def main():
     WishlistURL = f"https://store.steampowered.com/wishlist/id/{SteamID}"
     # Capture URLs from Wishlist
     grab = urlfetcher.grab_URL(WishlistURL)
-    regex = re.findall("(?<=\"appid\":)(\d+)(?=,\"priority)",grab.text)
+    regex = re.findall("(?<=\"appid\":)(\\d+)(?=,\"priority)",grab.text)
     try:
         regex[0]
     except:
