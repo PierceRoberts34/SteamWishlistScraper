@@ -14,7 +14,7 @@ def main():
     regex = re.findall("(?<=\"appid\":)(\\d+)(?=,\"priority)",grab.text)
     try:
         regex[0]
-    except:
+    except IndexError:
         print("No games found, make sure your profile is set to public")
         return 1
     SteamCSV = open(f'{SteamID}\'s Wishlist.csv', 'a')
