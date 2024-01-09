@@ -28,3 +28,6 @@ def main():
         print(appID)
         game = SteamApp(appID, Country)
         SteamCSV.write(f"{game.get_appID()},\"{game.get_name()}\",{game.get_rating()},\"{game.get_developer()}\",\"{game.get_publisher()}\",{game.get_ogprice()},{game.get_cprice()},{game.get_discount()},{game.get_metascore()}\n")
+
+if __name__ == '__main__':
+    wishlist_scraper.main()
