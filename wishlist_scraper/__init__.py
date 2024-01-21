@@ -4,18 +4,23 @@ from .SteamApp import SteamApp
 from .options import options
 
 def main():
+    # Get command line arguments
     args = options()
-    SteamID = args.id # Replace steamID with user input
-    Country = args.country # Allow user to select country
+    SteamID = args.id
+    Country = args.country
     WishlistURL = f"https://store.steampowered.com/wishlist/id/{SteamID}"
+    
     # Capture URLs from Wishlist
     grab = grab_URL(WishlistURL)
     regex = re.findall("(?<=\"appid\":)(\\d+)(?=,\"priority)",grab.text)
+    
+    # Check whether any games have been scraped
     try:
         regex[0]
     except IndexError:
         print("No games found, make sure your profile is set to public")
         return 1
+
     SteamCSV = open(f'{SteamID}\'s Wishlist.csv', 'a')
     csv_columns = ["App ID","Name","%Rating","Developer","Publisher","Original Price","Current Price","%Discount","Metascore"]
 
