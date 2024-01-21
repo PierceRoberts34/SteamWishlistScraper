@@ -6,7 +6,7 @@ class SteamApp:
     def __init__(self, appID, country='us'):
         self.__appID = appID
         parameters = {'appids':appID, 'cc':country} # Info for a game
-        grab = urlfetcher.grab_URL(f"https://store.steampowered.com/api/appdetails", parameters)
+        grab = grab_URL(f"https://store.steampowered.com/api/appdetails", parameters)
         self.__json = json.loads(grab.text)
 
     def get_appID(self):
@@ -20,7 +20,7 @@ class SteamApp:
     # Steam has a seperate API for ratings
     def get_rating(self):
         parameters = {'json':1,'language':'all'}
-        grab = urlfetcher.grab_URL(f"https://store.steampowered.com/appreviews/{self.__appID}", parameters)
+        grab = grab_URL(f"https://store.steampowered.com/appreviews/{self.__appID}", parameters)
         jsonArray = json.loads(grab.text)
         try: 
             positive = jsonArray["query_summary"]["total_positive"]
