@@ -1,5 +1,5 @@
 import re # Regular expressions for matching Steam AppIDs
-from .urlfetcher import grab_url # Retry in case of timeout
+from .urlfetcher import grab_URL # Retry in case of timeout
 from .SteamApp import SteamApp
 from .options import options
 
