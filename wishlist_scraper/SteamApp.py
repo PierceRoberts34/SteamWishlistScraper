@@ -1,4 +1,4 @@
-import urlfetcher
+import .urlfetcher
 import json
 
 class SteamApp:

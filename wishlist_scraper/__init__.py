@@ -1,7 +1,7 @@
 import re # Regular expressions for matching Steam AppIDs
-import urlfetcher # Retry in case of timeout
-from SteamApp import SteamApp
-from options import options
+import .urlfetcher # Retry in case of timeout
+from .SteamApp import SteamApp
+from .options import options
 
 def main():
     args = options()
