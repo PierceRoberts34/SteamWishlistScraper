@@ -9,7 +9,7 @@ def main():
     Country = args.country # Allow user to select country
     WishlistURL = f"https://store.steampowered.com/wishlist/id/{SteamID}"
     # Capture URLs from Wishlist
-    grab = urlfetcher.grab_URL(WishlistURL)
+    grab = grab_URL(WishlistURL)
     regex = re.findall("(?<=\"appid\":)(\\d+)(?=,\"priority)",grab.text)
     try:
         regex[0]
