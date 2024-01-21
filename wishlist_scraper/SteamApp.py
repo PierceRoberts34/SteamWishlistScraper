@@ -1,4 +1,4 @@
-from .urlfetcher import grab_url
+from .urlfetcher import grab_URL
 import json
 
 class SteamApp:
