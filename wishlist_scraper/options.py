@@ -1,3 +1,4 @@
+# Define program launch arguments
 import argparse
 
 def options():
