@@ -1,8 +1,12 @@
-# Define program launch arguments
 import argparse
 
 def options():
-    parser = argparse.ArgumentParser(description='Download info about your Steam wishlist')
+    # Create parser
+    parser = argparse.ArgumentParser(
+        description='Download info about your Steam wishlist',
+        prog='wishlist_scraper',
+        usage='py -m wishlist_scraper [OPTIONS] [ID]')
+    
     # Set options for scraper
     parser.add_argument(
         'id',
